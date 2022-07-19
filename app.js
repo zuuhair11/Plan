@@ -21,6 +21,10 @@ class UI {
         row.innerHTML = `
             <td>${plan.todo}</td>
             <td>${date}</td>
+            <td>
+                <button class="yes">YES</button>
+                <button class="no">NO</button>
+            </td>
         `
         // Append the row to the list
         planList.appendChild(row)
@@ -30,6 +34,29 @@ class UI {
     clearFields() {
         document.querySelector('.inputValue').value = '';
         document.querySelector('.dateValue').value  = '';
+    }
+
+    checkDone(target) {
+        if(target.className === 'yes') {
+            // Disabled Yes
+            target.disabled = true;
+            // Display done on the button
+            target.textContent = 'YEP'
+            // Show Yes
+            const yes = target.nextElementSibling;
+            // Remove the button NO
+            yes.remove();
+
+        } else {
+            // Disabled Yes
+            target.disabled = true;
+            // Display done on the button
+            target.textContent = 'NAH'
+            // Show Yes
+            const no = target.previousElementSibling;
+            // Remove the button NO
+            no.remove();
+        }
     }
 }
 
@@ -60,3 +87,16 @@ fromADD.addEventListener('submit', function(e) {
         ui.clearFields();
     }
 });
+
+// Event listen to the plan list
+const planList = document.querySelector('.planList');
+planList.addEventListener('click', function(e) {
+    // Instantiate ui
+    const ui = new UI();
+
+    // Check click on the buttons
+    if(e.target.className === 'yes' || e.target.className === 'no') {
+        // Check if the plan done or no
+        ui.checkDone(e.target);
+    }
+})
