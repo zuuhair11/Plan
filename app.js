@@ -26,6 +26,11 @@ class UI {
         planList.appendChild(row)
 
     }
+
+    clearFields() {
+        document.querySelector('.inputValue').value = '';
+        document.querySelector('.dateValue').value  = '';
+    }
 }
 
 
@@ -48,6 +53,10 @@ fromADD.addEventListener('submit', function(e) {
         alert('Fill in everything');
 
     } else {
+        // Add plan
         ui.addPlantoList(plan);
+
+        // Clear fields
+        ui.clearFields();
     }
 });
