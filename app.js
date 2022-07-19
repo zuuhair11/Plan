@@ -42,6 +42,8 @@ class UI {
             target.disabled = true;
             // Display done on the button
             target.textContent = 'YEP'
+            // Display the text a little darker
+            target.style.fontWeight = 'bold';
             // Show Yes
             const yes = target.nextElementSibling;
             // Remove the button NO
@@ -52,6 +54,8 @@ class UI {
             target.disabled = true;
             // Display done on the button
             target.textContent = 'NAH'
+            // Display the text a little darker
+            target.style.fontWeight = 'bold';
             // Show Yes
             const no = target.previousElementSibling;
             // Remove the button NO
@@ -77,7 +81,7 @@ fromADD.addEventListener('submit', function(e) {
 
     // Valid 
     if(todo === '' || date === '') {
-        alert('Fill in everything');
+        alert('Make sure that you didn\'t miss anything');
 
     } else {
         // Add plan

@@ -3,14 +3,16 @@
     margin: 0px; 
 }
 
+body {
+    background: rgb(217, 210, 219);
+
+}
 
 .header h1 {
     text-align: center;
     background-color: deepskyblue;
     padding: 10px;
-    
-    border-radius: 0px 20px;
-
+    border-radius: 0 60%;
 }
 .entry {
     display: flex;
@@ -26,16 +28,19 @@
     height: 25px;
     margin-right: 3px;   
     border-radius: 5px;
+    background: local;
 }
 .dateValue {
     flex: 20%;
     margin-right: 3px;
     border-radius: 5px;
+    background: local;
 
 }
 .btnADD {
     flex: 10%;
     border-radius: 5px;
+    background: local;
 }
 
 
@@ -49,7 +54,7 @@ tr th:first-child {
 }
 
 tr th:nth-child(2) {
-    width: 30%;
+    width: 38%;
 }
 
 tr th:nth-child(3) {
